@@ -12,7 +12,7 @@ Dette er en [Telegram](https://telegram.org/) bot som gir informasjon om offentl
 
 * Åpne [t.me/oslotransportbot](t.me/oslotransportbot) i Telegram.  
 * Skriv _/start_ for å registrere deg som en bruker av botten.
-* Skriv _/oppdater for å aktivere eller deaktivere automatiske oppdateringer ved problemer.
+* Skriv _/oppdater_ for å aktivere eller deaktivere automatiske oppdateringer ved problemer.
 
 
 ## Litt teknisk
