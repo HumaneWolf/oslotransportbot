@@ -298,14 +298,14 @@ bot.on('/glemmeg', msg => {
 bot.on(['/help', '/hjelp'], msg => {
 	bot.sendMessage(msg.chat.id, "Tilgjengelige kommandoer:\n\n\
 		\t/start - Registrerer deg/kanalen hos botten (angir bot admin for grupper).\n\
-		\t/oppdater [1/0 eller aktiver/deaktiver] - Aktiver eller deaktiver automatiske oppdateringer om trafikk.\n\
+		\t/oppdater - Aktiver eller deaktiver automatiske oppdateringer om trafikk.\n\
 		\t/glemmeg - Sletter deg som bruker (Sletter gruppen fra systemet hvis brukt i en gruppe).\n\
 		Mer funksjonalitet kommer snart!");
 	/*bot.sendMessage(msg.chat.id, "Tilgjengelige kommandoer:\n\n\
 		\t/start - Registrerer deg/kanalen hos botten (angir bot admin for grupper).\n\
 		\t/avganger [stedsnavn] - Lister neste avganter på den angitte stasjonen.\n\
 		\t/fav [handling] [argument] - Vis eller endre listen over favorittstopp.\n\
-		\t/oppdatermeg [1/0 eller aktiver/deaktiver] - Aktiver eller deaktiver automatiske oppdateringer om trafikk.\n\
+		\t/oppdatermeg - Aktiver eller deaktiver automatiske oppdateringer om trafikk.\n\
 		\t/glemmeg - Sletter deg som bruker (Sletter gruppen fra systemet hvis brukt i en gruppe).");*/
 	return;
 });
