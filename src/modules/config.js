@@ -17,7 +17,7 @@ exports.db_pass = process.env.DB_PASS;
 exports.ownerIDs = [ 126190936 ];
 //0 = @humanewolf
 
-exports.twitterIDs = [ 44597892  ];
+exports.twitterIDs = [ 44597892 ];
 //0 = tbanen
 
 exports.metroLines = [ 1, 2, 3, 4, 5 ];
