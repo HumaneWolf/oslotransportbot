@@ -1,6 +1,7 @@
 const { join } = require('path');
 const { readdir } = require('fs');
 const Telegraf = require('telegraf');
+const Twitter = require('twitter');
 const MySql = require('mysql2');
 require('log-timestamp');
 
@@ -15,6 +16,13 @@ app.telegram = new Telegraf(app.config.telegram_api_key);
 //Set the username in the options, for the bot to recognize commands when they include it's username.
 app.telegram.telegram.getMe().then((botInfo) => {
     app.telegram.options.username = botInfo.username;
+});
+
+//Prepare twitter api.
+app.twitter = new Twitter({
+    consumer_key: app.config.twitter_comsumer_key,
+    consumer_secret: app.config.twitter_consumer_secret,
+    bearer_token: app.config.twitter_bearer_token
 });
 
 //Connecting to database.
