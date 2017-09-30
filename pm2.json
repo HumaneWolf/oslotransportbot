@@ -1,0 +1,10 @@
+{
+  "apps": [{
+    "name": "OsloTransportBot",
+    "script": "src/app.js",
+    "env": {
+      "production": true
+    },
+    "trace": true
+  }]
+}

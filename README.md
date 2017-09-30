@@ -17,13 +17,13 @@ Dette er en [Telegram](https://telegram.org/) bot som gir informasjon om offentl
 
 ## Litt teknisk
 
-Botten er programert i Node.JS v7.4.0 og bruker følgende moduler (alle er tilgjengelig via npm):  
+Botten er programert i Node.JS v8.6.0 og bruker følgende moduler (alle er tilgjengelig via npm):
 * telebot  
 * twitter  
 * mysql2  
 * node-env-file  
 * log-timestamp (ikke påkrevd for normal bruk)  
 
-Botten lagrer informasjonen den trenger i en MySQL database, som følger strukturen i filen _oslotrans.sql_.
+Botten lagrer informasjonen den trenger i en MySQL database, som følger strukturen i filen `oslotrans.sql`.
 
 For å sette opp botten må du installere de brukte modulene, fylle inn informasjonen i .env.sample filen og endre navnet på denne til .env.
