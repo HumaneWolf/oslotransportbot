@@ -24,7 +24,7 @@ module.exports = async (app) => {
             [ chat.id ],
             function (error, results) {
                 if (error) {
-                    app.error.error('Failed to load from database.');
+                    app.error.error('Failed to load from database (oppdater/select).');
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
@@ -39,13 +39,13 @@ module.exports = async (app) => {
                     newStatus = 0;
                 }
 
-                //Insert
+                //Update
                 app.db.execute(
                     'UPDATE chats SET tbane_updates=? WHERE chat_id=?',
                     [ newStatus, chat.id ],
                     function (error) {
                         if (error) {
-                            app.error.error('Failed to load from database.');
+                            app.error.error('Failed to load from database (oppdater/update).');
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }

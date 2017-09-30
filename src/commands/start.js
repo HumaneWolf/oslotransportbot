@@ -24,7 +24,7 @@ module.exports = async (app) => {
             [ chat.id ],
             function (error, results) {
                 if (error) {
-                    app.error.error('Failed to load from database.');
+                    app.error.error('Failed to load from database (start/select.');
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
@@ -40,7 +40,7 @@ module.exports = async (app) => {
                     [ chat.id, user.id ],
                     function (error) {
                         if (error) {
-                            app.error.error('Failed to load from database.');
+                            app.error.error('Failed to load from database (start/insert).');
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }

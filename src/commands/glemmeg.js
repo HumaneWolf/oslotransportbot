@@ -24,7 +24,7 @@ module.exports = async (app) => {
             [ chat.id ],
             function (error, results) {
                 if (error) {
-                    app.error.error('Failed to load from database.');
+                    app.error.error('Failed to load from database (glemmeg/select).');
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
@@ -34,13 +34,13 @@ module.exports = async (app) => {
                     return;
                 }
 
-                //Insert
+                //Delete
                 app.db.execute(
                     'DELETE FROM chats WHERE chat_id=?',
                     [ chat.id ],
                     function (error) {
                         if (error) {
-                            app.error.error('Failed to load from database.');
+                            app.error.error('Failed to load from database (glemmeg/delete).');
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }
