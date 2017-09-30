@@ -13,3 +13,9 @@ exports.db_host = process.env.DB_HOST;
 exports.db_name = process.env.DB_NAME;
 exports.db_user = process.env.DB_USER;
 exports.db_pass = process.env.DB_PASS;
+
+exports.ownerIDs = [ 126190936 ];
+//0 = @humanewolf
+
+exports.twitterIDs = [ 44597892  ];
+//0 = tbanen

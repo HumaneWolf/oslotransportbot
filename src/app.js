@@ -38,6 +38,7 @@ readdir(join('src', 'autoload'), (error, files) => {
     });
 });
 
+//Autoload commands.
 readdir(join('src', 'commands'), (error, files) => {
     if (error) return app.error.error('Autoload Directory Reading Failed: ' + error);
 
