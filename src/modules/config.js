@@ -19,3 +19,5 @@ exports.ownerIDs = [ 126190936 ];
 
 exports.twitterIDs = [ 44597892  ];
 //0 = tbanen
+
+exports.metroLines = [ 1, 2, 3, 4, 5 ];
