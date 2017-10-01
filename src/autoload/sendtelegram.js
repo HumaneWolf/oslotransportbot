@@ -26,7 +26,9 @@ module.exports = app => {
                                     {
                                         'parse_mode': 'Markdown'
                                     }
-                                );
+                                ).catch((e) => {
+                                    app.error.warn('Error notifying chat ' + chat.chat_id + ' because: ' + e);
+                                });
                             });
                             app.db.execute(
                                 'UPDATE tweets SET notified_datetime=CURRENT_TIMESTAMP WHERE tweet_id=?',
