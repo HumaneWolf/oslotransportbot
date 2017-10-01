@@ -18,7 +18,7 @@ module.exports = async (app) => {
             }
         }
 
-        //Is the chat registered already?
+        //Is the chat registered and updates enabled already?
         app.db.execute(
             'SELECT count(*) as c, tbane_updates FROM chats WHERE chat_id=?',
             [ chat.id ],
@@ -30,7 +30,7 @@ module.exports = async (app) => {
                 }
 
                 if (results[0].c === 0) {
-                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne: ' + error);
+                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne.');
                     return;
                 }
 

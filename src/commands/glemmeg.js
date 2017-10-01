@@ -30,7 +30,7 @@ module.exports = async (app) => {
                 }
 
                 if (results[0].c === 0) {
-                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne: ' + error);
+                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne.');
                     return;
                 }
 
