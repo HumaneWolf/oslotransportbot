@@ -35,10 +35,10 @@ module.exports = app => {
                                     if (error)
                                         return app.error.error('Failed to save to database (sendetelegram/update):' . error);
                                 }
-                            )
+                            );
                         });
                     }
-                )
+                );
             }
         );
     }, 60000);
