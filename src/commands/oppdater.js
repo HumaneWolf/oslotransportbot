@@ -22,15 +22,15 @@ module.exports = async (app) => {
         app.db.execute(
             'SELECT count(*) as c, tbane_updates FROM chats WHERE chat_id=?',
             [ chat.id ],
-            function (error, results) {
+            (error, results) => {
                 if (error) {
-                    app.error.error('Failed to load from database (oppdater/select).');
+                    app.error.error('Failed to load from database (oppdater/select): ' + error);
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
 
                 if (results[0].c === 0) {
-                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne.');
+                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne: ' + error);
                     return;
                 }
 
@@ -43,9 +43,9 @@ module.exports = async (app) => {
                 app.db.execute(
                     'UPDATE chats SET tbane_updates=? WHERE chat_id=?',
                     [ newStatus, chat.id ],
-                    function (error) {
+                    (error) => {
                         if (error) {
-                            app.error.error('Failed to load from database (oppdater/update).');
+                            app.error.error('Failed to load from database (oppdater/update): ' + error);
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }

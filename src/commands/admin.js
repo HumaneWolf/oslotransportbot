@@ -16,9 +16,9 @@ module.exports = async app => {
                 app.db.execute(
                     'DELETE FROM stops',
                     [],
-                    function (error) {
+                    (error) => {
                         if (error) {
-                            app.error.error('Failed to load from database (admin/stops/clear).');
+                            app.error.error('Failed to load from database (admin/stops/clear): ' + error);
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }
@@ -34,16 +34,16 @@ module.exports = async app => {
             if (args[2] === 'load') {
                 let counterMessage = await msg.reply('0 stopp lagret.');
                 console.log(counterMessage);
-                (app.config.metroLines).forEach(async line => {
+                app.config.metroLines.forEach(async line => {
                     let stops = await req.get('/Place/GetStopsByLineID/' + line);
-                    await (stops.data).forEach(stop => {
+                    await stops.data.forEach(stop => {
                         app.db.execute(
                             'INSERT IGNORE INTO stops (stop_id, stop_name, stop_shortname) ' +
                             'VALUES (?, ?, ?)',
                             [ stop.ID, stop.Name, stop.ShortName ],
-                            function (error) {
+                            (error) => {
                                 if (error) {
-                                    app.error.error('Failed to save to database (admin/stops/load).');
+                                    app.error.error('Failed to save to database (admin/stops/load): ' + error);
                                 }
                             }
                         );
@@ -51,9 +51,9 @@ module.exports = async app => {
                     app.db.execute(
                         'SELECT count(*) as c FROM stops',
                         [],
-                        async function (error, results) {
+                        async (error, results) => {
                             if (error) {
-                                app.error.error('Failed to load from database (admin/stops/load/count).');
+                                app.error.error('Failed to load from database (admin/stops/load/count): ' + error);
                             }
                             app.telegram.telegram.editMessageText(
                                 counterMessage.chat.id,

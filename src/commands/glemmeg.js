@@ -22,15 +22,15 @@ module.exports = async (app) => {
         app.db.execute(
             'SELECT count(*) as c FROM chats WHERE chat_id=?',
             [ chat.id ],
-            function (error, results) {
+            (error, results) => {
                 if (error) {
-                    app.error.error('Failed to load from database (glemmeg/select).');
+                    app.error.error('Failed to load from database (glemmeg/select): ' + error);
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
 
                 if (results[0].c === 0) {
-                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne.');
+                    msg.reply('Chatten er ikke registrert. Skriv /start for å begynne: ' + error);
                     return;
                 }
 
@@ -38,9 +38,9 @@ module.exports = async (app) => {
                 app.db.execute(
                     'DELETE FROM chats WHERE chat_id=?',
                     [ chat.id ],
-                    function (error) {
+                    (error) => {
                         if (error) {
-                            app.error.error('Failed to load from database (glemmeg/delete).');
+                            app.error.error('Failed to load from database (glemmeg/delete): ' + error);
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }

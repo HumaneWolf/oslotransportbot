@@ -22,7 +22,7 @@ Botten er programert i Node.JS v8.6.0 og bruker følgende moduler (alle er tilgj
 * log-timestamp
 * mysql2
 * node-env-file
-* pmx (For statistikk i Keemetrics via pm2, om man bruker dette. Hvis ikke, fjern modulet for det fra `./src/autoload` mappen.)
+* pmx (For statistikk i Keymetrics via pm2, om man bruker dette. Hvis ikke, fjern modulet for det fra `./src/autoload` mappen.)
 * telegraf
 * twitter
 

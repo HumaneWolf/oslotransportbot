@@ -22,9 +22,9 @@ module.exports = async (app) => {
         app.db.execute(
             'SELECT count(*) as c FROM chats WHERE chat_id=?',
             [ chat.id ],
-            function (error, results) {
+            (error, results) => {
                 if (error) {
-                    app.error.error('Failed to load from database (start/select.');
+                    app.error.error('Failed to load from database (start/select): ' + error);
                     msg.reply('ERROR: Failed to load from database.');
                     return;
                 }
@@ -38,9 +38,9 @@ module.exports = async (app) => {
                 app.db.execute(
                     'INSERT INTO chats (chat_id, admin_id) VALUES (?, ?)',
                     [ chat.id, user.id ],
-                    function (error) {
+                    (error) => {
                         if (error) {
-                            app.error.error('Failed to load from database (start/insert).');
+                            app.error.error('Failed to load from database (start/insert): ' + error);
                             msg.reply('ERROR: Failed to load from database.');
                             return;
                         }
