@@ -15,7 +15,7 @@ module.exports = app => {
         }
 
         app.db.execute(
-            'SELECT * FROM stops WHERE stop_name LIKE ?',
+            'SELECT * FROM stops WHERE stop_name LIKE ? ORDER BY stop_name',
             [ '%' + placename + '%'],
             async (error, results) => {
                 if (error) {
