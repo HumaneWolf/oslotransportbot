@@ -7,7 +7,7 @@ module.exports = async app => {
         let user = msg.from;
         if (!app.config.ownerIDs.includes(user.id)) return;
 
-        let args = (msg.update.message.text).split(' ');
+        let args = msg.update.message.text.split(' ');
 
         //Actions related to metro stops.
         if (args[1] === 'stops') {
