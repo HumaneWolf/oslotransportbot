@@ -72,6 +72,6 @@ module.exports = app => {
     };
 
     //Run regularly and at bot startup.
-    setInterval(updateAllMetrics, 30000);
+    setInterval(updateAllMetrics, 5000);
     updateAllMetrics();
 };
