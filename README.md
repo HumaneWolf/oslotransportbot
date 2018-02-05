@@ -10,7 +10,7 @@ Dette er en [Telegram](https://telegram.org/) bot som gir informasjon om offentl
 
 ## Bruk  
 
-* Åpne [t.me/oslotransportbot](http://t.me/oslotransportbot) i Telegram.  
+* Sett opp botten på en server, med en Twitter API key og en Telegram bot API key.
 * Skriv _/start_ for å registrere deg som en bruker av botten.
 * Skriv _/oppdater_ for å aktivere eller deaktivere automatiske oppdateringer ved problemer.
 
