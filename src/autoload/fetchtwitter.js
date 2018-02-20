@@ -14,7 +14,7 @@ module.exports = app => {
                     'exclude_replies': true, //Don't include replies the user makes to others.
                     'include_rts': false //Don't include retweets.
                 },
-                (error, tweets) => {
+                async (error, tweets) => {
                     if (error) return log.error(error);
 
                     tweets.sort((a, b) => {
@@ -27,18 +27,18 @@ module.exports = app => {
                         return 0;
                     });
 
-                    tweets.forEach(tweet => {
-                        if (lastTweet < tweet.id_str) {
-                            lastTweet = tweet.id_str;
-                            app.redis.setAsync(`lasttweet${twUser}`, tweet.id_str);
+                    for (let i = 0; i < tweets.length; i++) {
+                        if (lastTweet < tweets[i].id_str) {
+                            lastTweet = tweets[i].id_str;
+                            app.redis.setAsync(`lasttweet${twUser}`, tweets[i].id_str);
                         }
 
-                        app.telegram.telegram.sendMessage(
+                        await app.telegram.telegram.sendMessage(
                             app.config.telegram.channel,
-                            `*#TBANEN OPPDATERING:*\n${tweet.text}`,
+                            `*#TBANEN OPPDATERING:*\n${tweets[i].text}`,
                             { parse_mode: 'Markdown' }
                         );
-                    });
+                    }
                 }
             );
         });
