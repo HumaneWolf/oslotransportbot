@@ -1,0 +1,19 @@
+{
+    "telegram": {
+        "apiKey": "",
+        "channel": 0
+    },
+    "twitter": {
+        "consumerKey": "",
+        "consumerSecret": "",
+        "bearerToken": ""
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379,
+        "scope": "tbanebot"
+    },
+    "twitterIDs": [
+        44597892
+    ]
+}

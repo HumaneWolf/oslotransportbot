@@ -17,15 +17,6 @@ Dette er en [Telegram](https://telegram.org/) bot som gir informasjon om offentl
 
 ## Litt teknisk
 
-Botten er programert i Node.JS v8.6.0 og bruker følgende moduler (alle er tilgjengelig via npm):
-* axios
-* log-timestamp
-* mysql2
-* node-env-file
-* pmx (For statistikk i Keymetrics via pm2, om man bruker dette. Hvis ikke, fjern modulet for det fra `./src/autoload` mappen.)
-* telegraf
-* twitter
+Botten er programert i Node.JS v9.5.0.
 
-Botten lagrer informasjonen den trenger i en MySQL database, som følger strukturen i filen `oslotrans.sql`.
-
-For å sette opp botten, bruk kommandoen `npm install` for å sette opp node modulene. Deretter, kopier `./src/.end.sample` til `./src/.env` og fyll it informasjonen i den. Sett opp databasen som anvist i `oslotrans.sql`, så kan du kjøre botten med `node src/app.js`.
+For å sette opp botten, bruk kommandoen `npm install` for å sette opp node modulene. Deretter, kopier `./src/.end.sample` til `./src/.env` og fyll it informasjonen i den.
