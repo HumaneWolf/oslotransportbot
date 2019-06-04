@@ -14,7 +14,7 @@
     "author": "Kristian <kristian@humanewolf.com>",
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.18.1",
         "pmx": "^1.6.4",
         "telegraf": "^3.18.0",
         "twitter": "^1.7.1",
